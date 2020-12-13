@@ -1,0 +1,50 @@
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+     public static Scanner sc = new Scanner(System.in);
+
+    
+
+   public static int getLength(int n) {
+        int count = 0;
+        while (n != 0) {
+            n = n / 10;
+            count++;
+        }
+        return count;
+    }
+
+    
+    
+    
+    public static int rotate(int n, long rot){
+        int len = getLength(n);
+        rot = rot % len;
+        int r = (int) rot;
+        if ( r < 0 ) r = ( r + len ) % len;
+        
+        int mul = 1, div = 1;
+        
+        for(int i=1; i <= len; i++){
+            if ( i <= r) mul *= 10;
+            else div *= 10;
+        }
+        
+        int A = n % div;
+        int B = n / div;
+        
+        return A * mul + B;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+         
+
+        long r = sc.nextLong();
+        int n = sc.nextInt();
+
+        System.out.println(rotate(n, r));
+    }
+}

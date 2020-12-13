@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+    public static Scanner sc = new Scanner(System.in);
+    
+    public static int factorial(int n) {
+
+        int fact = 1;
+
+        for(int i=1;i<=n;i++){
+            fact = fact*i;
+        }
+        return fact;
+    }
+
+    public static int permutation(int n, int r){
+
+        int n1 = factorial(n);
+
+       
+ 
+        int a = n-r;
+ 
+        int den1 = factorial(a);
+ 
+ 
+         return  n1 / den1;
+    }
+
+    public static int combination(int n, int r){
+
+       int n1 = factorial(n);
+
+       int den2 = factorial(r);
+
+       int a = n-r;
+
+       int den1 = factorial(a);
+
+
+        return  n1 / (den1 * den2);
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        int n = sc.nextInt();
+
+        int r = sc.nextInt();
+
+        System.out.println(factorial(n));
+        
+        System.out.println(permutation(n,r));
+
+        System.out.println(combination(n,r));
+
+    }
+}

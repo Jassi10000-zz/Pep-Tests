@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+     public static Scanner sc = new Scanner(System.in);
+
+    public static int reverseANo_(int n) {
+
+        int rev_n = 0;
+        while (n > 0) {
+
+            rev_n = rev_n * 10 + n % 10;
+
+            n = n / 10;
+        }
+        return rev_n;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+         int n = sc.nextInt();
+    
+        System.out.println(reverseANo_(n));
+    }
+}
